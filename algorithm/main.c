@@ -6,9 +6,32 @@
 // 定义一个微秒的时间单位
 #define CLOCKS_PER_SEC ((clock_t)1000) 
 /* 要调用上面定义函数的主函数 */
-int main()
+struct  linkNode{
+    int num;
+    struct linkNode * next;
+};
+
+int main(){
+    struct linkNode a,b,c, *head;
+    a.num =3;
+    b.num =5;
+    c.num =1;
+    head = &a;
+    
+    a.next = &b;
+    b.next = &c;
+    c.next = NULL;
+    struct linkNode *p;
+    p = head;
+    while(p != NULL){
+        printf("%d\n",p->num);
+        p=p->next;
+    }
+}
+int main_soft()
 {
    
+    
    int *arr,  // 一个指向整数数组的指针
        i,     //用于循环数组
        length;// 数组长度
